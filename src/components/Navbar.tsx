@@ -15,11 +15,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white dark:bg-black shadow-lg">
+    <nav className="bg-black dark:bg-black shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <div className="text-xl font-bold dark:text-white text-gray-800">
+            <div className="text-xl font-bold text-white ">
               IETE NotesBank
             </div>
           </div>
