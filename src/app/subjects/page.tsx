@@ -1,50 +1,88 @@
-import { Card, CardContent } from "@/components/ui/card"
+"use client";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
+
 
 const subjects = [
-  { name: "Science", bgColor: "bg-[rgb(0,255,255)]" },
-  { name: "Social Studies", bgColor: "bg-[rgb(0,255,255)]" },
-  { name: "Maths", bgColor: "bg-[rgb(0,255,255)]" },
-  { name: "Computer", bgColor: "bg-[rgb(0,255,255)]" },
-  { name: "Drawing", bgColor: "bg-[rgb(0,255,255)]" },
-  { name: "Eng Vocabulary", bgColor: "bg-[rgb(0,255,255)]" },
-]
+  { title: "Computational Methods", link: "https://example.com/science" },
+  { title: "Digital Logic and Computer Design", link: "https://example.com/social-studies" },
+  { title: "Discrete Mathematics", link: "https://example.com/maths" },
+  { title: "Data Structure", link: "https://example.com/computer" },
+  { title: "Indian Knowledge System", link: "https://example.com/drawing" },
+  { title: "Object Oriented Programming", link: "https://example.com/eng-vocabulary" },
+];
 
-export default function SubjectCards() {
+
+export default function SubjectsPage() {
   return (
-    <div className="min-h-screen bg-gray-900 p-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row gap-4 mb-8">
-          {/* Branch Card */}
-          <Card className="bg-gray-800 border-gray-700 flex-grow sm:w-1/4">
-            <CardContent className="p-4">
-              <h2 className="text-sm font-medium text-gray-400 mb-1">Branch</h2>
-              <p className="text-lg font-semibold text-white">Computer Science</p>
-            </CardContent>
-          </Card>
-          {/* Semester Card */}
-          <Card className="bg-gray-800 border-gray-700 flex-grow sm:w-1/4">
-            <CardContent className="p-4">
-              <h2 className="text-sm font-medium text-gray-400 mb-1">Semester</h2>
-              <p className="text-lg font-semibold text-white">Third Semester</p>
-            </CardContent>
-          </Card>
-        </div>
+    <div className="min-h-screen bg-black p-8 flex flex-col items-center justify-center relative">
+      {/* Back Arrow Button */}
+      <Link href="/" passHref>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="absolute top-6 left-6 p-2 bg-gray-900/[0.6] rounded-full cursor-pointer transition-all duration-300 hover:bg-gray-800 hover:text-white hover:shadow-lg hover:shadow-blue-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6 text-gray-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </motion.div>
+      </Link>
 
-        {/* Subject Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {subjects.map((subject) => (
-            <Card
-              key={subject.name}
-              className={`${subject.bgColor} border-none hover:shadow-lg hover:shadow-black/30 transition-shadow`}
-            >
-              <CardContent className="p-8 flex items-center justify-center h-48">
-                <h3 className="text-3xl font-semibold text-white text-center">{subject.name}</h3>
-              </CardContent>
-            </Card>
-          ))}
+      {/* Animated Headings (Side by Side) */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex flex-row items-center justify-center gap-6 mb-10"
+      >
+        <div className="w-64 py-4 px-6 bg-gray-900/[0.6] rounded-lg shadow-md backdrop-blur-lg text-gray-300 text-3xl font-bold font-mono uppercase tracking-wide text-center transition-all duration-300 hover:text-white hover:shadow-blue-500 hover:shadow-lg">
+          <h2>IT</h2>
         </div>
-      </div>
+        <div className="w-64 py-4 px-6 bg-gray-900/[0.6] rounded-lg shadow-md backdrop-blur-lg text-gray-300 text-3xl font-bold font-mono uppercase tracking-wide text-center transition-all duration-300 hover:text-white hover:shadow-blue-500 hover:shadow-lg">
+          <h2>Semester 3</h2>
+        </div>
+      </motion.div>
+
+      {/* Subject Cards with Hover Effect */}
+      <HoverEffect items={subjects} />
     </div>
-  )
+  );
 }
 
+// export default function SubjectsPage() {
+//   return (
+//     <div className="min-h-screen bg-black p-8 flex flex-col items-center justify-center">
+//       {/* Animated Headings (Side by Side) */}
+//       <motion.div
+//         initial={{ opacity: 0, y: 10 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.6, ease: "easeOut" }}
+//         className="flex flex-row items-center justify-center gap-6 mb-10"
+//       >
+//         <div className="w-64 py-4 px-6 bg-gray-900/[0.6] rounded-lg shadow-md backdrop-blur-lg text-gray-300 text-3xl font-bold font-mono uppercase tracking-wide text-center transition-all duration-300 hover:text-white hover:shadow-blue-500 hover:shadow-lg">
+//           <h2>IT</h2>
+//         </div>
+//         <div className="w-64 py-4 px-6 bg-gray-900/[0.6] rounded-lg shadow-md backdrop-blur-lg text-gray-300 text-3xl font-bold font-mono uppercase tracking-wide text-center transition-all duration-300 hover:text-white hover:shadow-blue-500 hover:shadow-lg">
+//           <h2>Semester 3</h2>
+//         </div>
+//       </motion.div>
+
+//       {/* Subject Cards with Hover Effect */}
+//       <HoverEffect items={subjects} />
+//     </div>
+//   );
+// }
