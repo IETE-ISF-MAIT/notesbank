@@ -15,7 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-black dark:bg-black shadow-lg">
+    <nav className="bg-slate-900 dark:bg-black shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -30,7 +30,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 dark:bg-white  hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-white dark:bg-white  hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {item.name}
               </a>

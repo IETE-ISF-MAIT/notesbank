@@ -1,8 +1,13 @@
+import Branches from "@/components/Branches";
+import Homepage from "@/components/Homepage";
+
+
 export default function Home() {
   return (
     <>
     <div>
-      Home Page
+      <Homepage/>
+      <Branches/>
     </div>
     </>
   );
