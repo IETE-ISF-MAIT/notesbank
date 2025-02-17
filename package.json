@@ -9,16 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "aceternity-ui": "^0.2.2",
+=======
     "@tabler/icons-react": "^3.30.0",
+>>>>>>> 7a951de1c4d2eb653429cfd0eb9a2ab7bd7704b6
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
     "framer-motion": "^12.1.0",
     "lucide-react": "^0.474.0",
+<<<<<<< HEAD
+    "motion": "^12.4.2",
+=======
     "motion": "^12.4.3",
+>>>>>>> 7a951de1c4d2eb653429cfd0eb9a2ab7bd7704b6
     "next": "^15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -27,10 +36,13 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "init": "^0.1.2",
+    "npx": "^10.2.2",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }

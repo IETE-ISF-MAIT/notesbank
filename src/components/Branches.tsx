@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { BackgroundGradient } from "./ui/background-gradient"; 
+import { BackgroundGradient } from "./ui/BackgroundGradient";
+
 
 const allBranches = [
   { name: "Computer Science", href: "/branches/cse" },
